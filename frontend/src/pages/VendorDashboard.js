@@ -2281,7 +2281,6 @@
 
 // export default VendorDashboard;
 
-
 import React, { useState, useEffect } from 'react';
 import { backendCategories } from '../components/Categories';
 
@@ -2798,197 +2797,247 @@ const VendorDashboard = ({ user }) => {
 
       <style jsx>{`
         .vendor-dashboard {
-          max-width: 1000px;
-          margin: 40px auto;
-          padding: 20px;
-          background-color: #fff;
-          border-radius: 8px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          max-width: 1200px;
+          margin: 2rem auto;
+          padding: 2rem;
+          background-color: #f9fafb;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         h2 {
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: #1f2937;
           text-align: center;
-          margin-bottom: 20px;
-          color: #333;
+          margin-bottom: 1.5rem;
         }
 
         .product-form {
           display: flex;
           flex-direction: column;
-          gap: 15px;
-          margin-bottom: 40px;
+          gap: 1.5rem;
+          padding: 1.5rem;
+          background-color: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+          margin-bottom: 2rem;
         }
 
         .form-row {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-          align-items: flex-start;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1.25rem;
+          align-items: start;
         }
 
         .form-group {
           display: flex;
           flex-direction: column;
-          gap: 5px;
-          flex: 1;
-          min-width: 200px; /* Ensure fields don't get too narrow */
+          gap: 0.5rem;
         }
 
         .form-group.full-width {
-          flex: 1 0 100%; /* Full width for description and image URL */
+          grid-column: 1 / -1;
         }
 
         label {
+          font-size: 0.875rem;
           font-weight: 500;
-          color: #555;
+          color: #374151;
         }
 
         .required {
-          color: red;
+          color: #e11d48;
         }
 
         input,
         textarea,
         select {
-          padding: 8px;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          font-size: 1rem;
+          padding: 0.75rem;
+          border: 1px solid #d1d5db;
+          border-radius: 6px;
+          font-size: 0.875rem;
+          color: #1f2937;
+          background-color: #f9fafb;
+          transition: border-color 0.2s, box-shadow 0.2s;
           width: 100%;
           box-sizing: border-box;
         }
 
+        input:focus,
+        textarea:focus,
+        select:focus {
+          outline: none;
+          border-color: #0ea5e9;
+          box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
         textarea {
           resize: vertical;
+          min-height: 100px;
         }
 
         .submit-button {
-          padding: 10px 20px;
-          background-color: #6B46C1;
-          color: white;
+          padding: 0.75rem 1.5rem;
+          background: linear-gradient(to right, #0ea5e9, #06b6d4);
+          color: #ffffff;
           border: none;
-          border-radius: 4px;
+          border-radius: 6px;
           font-size: 1rem;
+          font-weight: 500;
           cursor: pointer;
-          transition: background-color 0.2s;
-          margin: 0 auto; /* Center the button */
+          transition: background 0.2s, transform 0.1s;
+          margin: 0 auto;
+          display: block;
         }
 
         .submit-button:hover {
-          background-color: #553c9a;
+          background: linear-gradient(to right, #0891b2, #0e7490);
+          transform: translateY(-1px);
+        }
+
+        .submit-button:active {
+          transform: translateY(0);
         }
 
         .success-message {
-          color: green;
+          color: #059669;
           text-align: center;
-          margin: 10px 0;
+          font-size: 0.875rem;
+          font-weight: 500;
+          margin: 0.75rem 0;
         }
 
         .error-message {
-          color: red;
+          color: #e11d48;
           text-align: center;
-          margin: 10px 0;
+          font-size: 0.875rem;
+          font-weight: 500;
+          margin: 0.75rem 0;
         }
 
-        .vendor-products {
-          margin-top: 40px;
+        .vendor-products,
+        .vendor-orders {
+          margin-top: 2.5rem;
+          padding: 1.5rem;
+          background-color: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .products-table {
+        .products-table,
+        .orders-table {
           width: 100%;
-          border-collapse: collapse;
-          margin-top: 20px;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin-top: 1.5rem;
+          font-size: 0.875rem;
         }
 
         .products-table th,
-        .products-table td {
-          padding: 10px;
-          border: 1px solid #ddd;
+        .orders-table th,
+        .products-table td,
+        .orders-table td {
+          padding: 0.75rem 1rem;
           text-align: left;
-          font-size: 0.9rem;
+          border-bottom: 1px solid #e5e7eb;
         }
 
-        .products-table th {
-          background-color: #f5f5f5;
+        .products-table th,
+        .orders-table th {
+          background-color: #f1f5f9;
+          color: #1f2937;
           font-weight: 600;
-          color: #333;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+          letter-spacing: 0.05em;
         }
 
-        .products-table td {
-          color: #555;
+        .products-table tr:hover,
+        .orders-table tr:hover {
+          background-color: #f9fafb;
+        }
+
+        .products-table tr:nth-child(even),
+        .orders-table tr:nth-child(even) {
+          background-color: #f8fafc;
+        }
+
+        .products-table td,
+        .orders-table td {
+          color: #4b5563;
         }
 
         .product-image {
-          width: 50px;
-          height: 50px;
+          width: 60px;
+          height: 60px;
           object-fit: cover;
-          border-radius: 4px;
+          border-radius: 6px;
+          border: 1px solid #e5e7eb;
         }
 
-        .no-products {
+        .no-products,
+        .no-orders {
           text-align: center;
-          color: #777;
+          color: #6b7280;
+          font-size: 0.875rem;
           font-style: italic;
+          padding: 1.5rem;
         }
 
         .delete-button {
-          padding: 6px 12px;
-          background-color: #dc3545;
-          color: white;
+          padding: 0.5rem 1rem;
+          background: linear-gradient(to right, #e11d48, #be123c);
+          color: #ffffff;
           border: none;
-          border-radius: 4px;
-          font-size: 0.9rem;
+          border-radius: 6px;
+          font-size: 0.875rem;
+          font-weight: 500;
           cursor: pointer;
-          transition: background-color 0.2s;
+          transition: background 0.2s, transform 0.1s;
         }
 
         .delete-button:hover {
-          background-color: #c82333;
+          background: linear-gradient(to right, #be123c, #9f1239);
+          transform: translateY(-1px);
         }
 
-        /* Styles for Vendor Orders Section */
-        .vendor-orders {
-          margin-top: 40px;
-        }
-
-        .orders-table {
-          width: 100%;
-          border-collapse: collapse;
-          margin-top: 20px;
-        }
-
-        .orders-table th,
-        .orders-table td {
-          padding: 10px;
-          border: 1px solid #ddd;
-          text-align: left;
-          font-size: 0.9rem;
-        }
-
-        .orders-table th {
-          background-color: #f5f5f5;
-          font-weight: 600;
-          color: #333;
-        }
-
-        .orders-table td {
-          color: #555;
-        }
-
-        .no-orders {
-          text-align: center;
-          color: #777;
-          font-style: italic;
+        .delete-button:active {
+          transform: translateY(0);
         }
 
         @media (max-width: 768px) {
+          .vendor-dashboard {
+            padding: 1rem;
+            margin: 1rem;
+          }
+
           .form-row {
-            flex-direction: column;
-            gap: 15px;
+            grid-template-columns: 1fr;
+            gap: 1rem;
           }
 
           .form-group {
             min-width: 100%;
+          }
+
+          .products-table,
+          .orders-table {
+            font-size: 0.75rem;
+          }
+
+          .products-table th,
+          .orders-table th,
+          .products-table td,
+          .orders-table td {
+            padding: 0.5rem;
+          }
+
+          .product-image {
+            width: 40px;
+            height: 40px;
           }
         }
       `}</style>
