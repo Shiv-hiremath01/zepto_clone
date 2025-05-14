@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { CartProvider } from './components/CartContext.js';
 
 
