@@ -103,22 +103,22 @@ const Products = ({ user, setUser, refreshUser }) => {
     setFilteredProducts(updatedProducts);
   }, [products, sortBy, minPrice, maxPrice]);
 
-  const handleCategoryChange = (e) => {
-    const backendCategory = e.target.value;
-    if (backendCategory !== selectedCategory) {
-      setSelectedCategory(backendCategory);
-      setSelectedSubcategory('');
-      setPage(1);
-      const queryParams = new URLSearchParams();
-      if (backendCategory !== 'All') {
-        queryParams.set('category', backendCategory);
-      }
-      if (searchQuery) {
-        queryParams.set('query', searchQuery);
-      }
-      navigate(`/products${queryParams.toString() ? '?' + queryParams.toString() : ''}`, { replace: true });
-    }
-  };
+  // const handleCategoryChange = (e) => {
+  //   const backendCategory = e.target.value;
+  //   if (backendCategory !== selectedCategory) {
+  //     setSelectedCategory(backendCategory);
+  //     setSelectedSubcategory('');
+  //     setPage(1);
+  //     const queryParams = new URLSearchParams();
+  //     if (backendCategory !== 'All') {
+  //       queryParams.set('category', backendCategory);
+  //     }
+  //     if (searchQuery) {
+  //       queryParams.set('query', searchQuery);
+  //     }
+  //     navigate(`/products${queryParams.toString() ? '?' + queryParams.toString() : ''}`, { replace: true });
+  //   }
+  // };
 
   const handleCategorySelect = (categoryValue) => {
     setSelectedCategory(categoryValue);
