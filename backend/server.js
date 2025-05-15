@@ -121,9 +121,7 @@ require('dotenv').config();
 const app = express();
 
 // Use CORS middleware
-app.use(cors({
-  origin: 'http://3.110.43.201:3000',
-}));
+app.use(cors());
 
 // Serve static files from the React app's build folder
 app.use(express.static(path.join(__dirname, '../frontend/build')));
