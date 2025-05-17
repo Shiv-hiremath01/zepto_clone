@@ -37,7 +37,7 @@ const Products = ({ user, setUser, refreshUser }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/products', {
+        const response = await axios.get('http://15.207.17.186:5000/api/products', {
           params: {
             category: selectedCategory === 'All' ? '' : selectedCategory,
             subcategory: selectedSubcategory,
@@ -64,7 +64,7 @@ const Products = ({ user, setUser, refreshUser }) => {
         return;
       }
       try {
-        const response = await axios.get('http://localhost:5000/api/products', {
+        const response = await axios.get('http://15.207.17.186:5000/api/products', {
           params: {
             category: selectedCategory,
             limit: 1000, // Fetch enough products to get all subcategories
@@ -156,7 +156,7 @@ const Products = ({ user, setUser, refreshUser }) => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/cart/add', {
+      await axios.post('http://15.207.17.186:5000/api/cart/add', {
         productId,
         quantity: 1,
       }, {
