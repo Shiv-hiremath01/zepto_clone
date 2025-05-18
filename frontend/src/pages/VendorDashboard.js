@@ -2307,7 +2307,7 @@ const VendorDashboard = ({ user }) => {
   useEffect(() => {
     const fetchVendorProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/products?vendorId=${user.id}`, {
+        const response = await fetch(`http://15.207.17.186:5000/api/products?vendorId=${user.id}`, {
           headers: {
             'Authorization': `Bearer ${user.token}`,
           },
@@ -2349,7 +2349,7 @@ const VendorDashboard = ({ user }) => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/orders/vendor', {
+        const response = await fetch('http://15.207.17.186:5000/api/orders/vendor', {
           headers: {
             'Authorization': `Bearer ${user.token}`,
           },
@@ -2475,7 +2475,7 @@ const VendorDashboard = ({ user }) => {
     console.log('Sending product data:', productData);
 
     try {
-      const response = await fetch('http://localhost:5000/api/products', {
+      const response = await fetch('http://15.207.17.186:5000/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -2516,7 +2516,7 @@ const VendorDashboard = ({ user }) => {
     if (!window.confirm('Are you sure you want to delete this product?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/products/${productId}`, {
+      const response = await fetch(`http://15.207.17.186:5000/api/products/${productId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${user.token}`,
