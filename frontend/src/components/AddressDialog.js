@@ -62,7 +62,7 @@ function AddressDialog({ open, onClose, onAddressSaved, token }) {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/address', address, {
+      const res = await axios.post('http://15.207.17.186:5000/api/address', address, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.data.success) {
