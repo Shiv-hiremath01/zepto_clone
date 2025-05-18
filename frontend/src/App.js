@@ -482,7 +482,7 @@ function AppContent() {
       const fetchProfile = async (token) => {
         try {
           console.log('Fetching profile with token:', token);
-          const res = await fetch('http://localhost:5000/auth/profile', {
+          const res = await fetch('http://15.207.17.186:5000/auth/profile', {
             headers: { Authorization: `Bearer ${token}` },
           });
           const data = await res.json();
