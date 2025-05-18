@@ -548,7 +548,7 @@ router.post('/forgot-password', async (req, res) => {
             },
         });
 
-        const resetLink = `http://localhost:${process.env.PORT}/reset-password/${resetToken}`;
+        const resetLink = `http://15.207.17.186:${process.env.PORT}/reset-password/${resetToken}`;
         await transporter.sendMail({
             to: user.email,
             subject: 'Password Reset',
