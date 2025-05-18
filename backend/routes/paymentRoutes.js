@@ -126,8 +126,8 @@ router.post('/create-checkout-session', async (req, res) => {
       payment_method_types: ['card'],
       line_items,
       mode: 'payment',
-      success_url: `http://localhost:3000/success?orderId=${order._id}`,
-      cancel_url: 'http://localhost:3000/cancel',
+      success_url: `http://15.207.17.186:3000/success?orderId=${order._id}`,
+      cancel_url: 'http://15.207.17.186/cancel',
       metadata: { userId, orderId: order._id.toString() },
     });
 
