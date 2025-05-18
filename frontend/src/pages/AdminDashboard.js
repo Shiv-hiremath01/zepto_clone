@@ -258,7 +258,7 @@ const AdminDashboard = ({ user, setUser }) => {
 
       try {
         // Fetch vendors
-        const vendorResponse = await axios.get('http://localhost:5000/api/vendors', {
+        const vendorResponse = await axios.get('http://15.207.17.186:5000/api/vendors', {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         console.log('Vendor API Response:', vendorResponse);
@@ -268,7 +268,7 @@ const AdminDashboard = ({ user, setUser }) => {
         setVendors(fetchedVendors);
 
         // Fetch products
-        const productResponse = await axios.get('http://localhost:5000/api/products', {
+        const productResponse = await axios.get('http://15.207.17.186:5000/api/products', {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         console.log('Product API Response:', productResponse);
@@ -276,7 +276,7 @@ const AdminDashboard = ({ user, setUser }) => {
         setProducts(productResponse.data.products || []);
 
         // Fetch orders
-        const orderResponse = await axios.get('http://localhost:5000/api/orders', {
+        const orderResponse = await axios.get('http://15.207.17.186:5000/api/orders', {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         console.log('Order API Response:', orderResponse);
@@ -309,7 +309,7 @@ const AdminDashboard = ({ user, setUser }) => {
     if (!window.confirm('Are you sure you want to delete this vendor and their products?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/vendors/${vendorId}`, {
+      await axios.delete(`http://15.207.17.186:5000/api/vendors/${vendorId}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setVendors(vendors.filter((vendor) => vendor._id !== vendorId));
