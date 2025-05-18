@@ -12,7 +12,7 @@ function ProductDetail({ user }) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/products/${id}`);
+        const res = await fetch(`http://15.207.17.186:5000/api/products/${id}`);
         const data = await res.json();
         console.log('Fetch product response:', data);
         if (data.success) {
@@ -44,7 +44,7 @@ function ProductDetail({ user }) {
     });
 
     try {
-      const res = await fetch('http://localhost:5000/api/cart/add', {
+      const res = await fetch('http://15.207.17.186:5000/api/cart/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
