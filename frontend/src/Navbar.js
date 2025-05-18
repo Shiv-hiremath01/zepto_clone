@@ -526,7 +526,7 @@ function Navbar({ user, setPage, handleLogout }) {
       const fetchCartCount = async () => {
         try {
           console.log('Fetching cart count with token:', user.token);
-          const response = await axios.get('http://localhost:5000/api/cart', {
+          const response = await axios.get('http://15.207.17.186:5000/api/cart', {
             headers: { Authorization: `Bearer ${user.token}` },
           });
           setCartCount(response.data.items.reduce((sum, item) => sum + item.quantity, 0));
@@ -551,7 +551,7 @@ function Navbar({ user, setPage, handleLogout }) {
     if (user && user.token) {
       const fetchAddress = async () => {
         try {
-          const res = await axios.get('http://localhost:5000/api/address', {
+          const res = await axios.get('http://15.207.17.186:5000/api/address', {
             headers: { Authorization: `Bearer ${user.token}` },
           });
           if (res.data.success && res.data.address.street) {
@@ -600,7 +600,7 @@ function Navbar({ user, setPage, handleLogout }) {
   const fetchProducts = useCallback(async (query) => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/products', {
+      const response = await axios.get('http://15.207.17.186:5000/api/products', {
         params: {
           query: query,
           limit: 5,
