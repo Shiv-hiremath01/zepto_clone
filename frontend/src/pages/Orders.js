@@ -14,7 +14,7 @@ const Orders = ({ user }) => {
       }
 
       try {
-        const response = await axios.get('http://localhost:5000/api/orders/user', {
+        const response = await axios.get('http://15.207.17.186:5000/api/orders/user', {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (response.data.success) {
