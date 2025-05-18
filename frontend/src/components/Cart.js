@@ -449,7 +449,7 @@ function Cart({ user, handleLogout }) {
       }
 
       try {
-        const response = await axios.get('http://localhost:5000/api/cart', {
+        const response = await axios.get('http://15.207.17.186:5000/api/cart', {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         console.log('Cart data fetched:', response.data);
@@ -471,7 +471,7 @@ function Cart({ user, handleLogout }) {
 
   const refreshCart = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/cart', {
+      const response = await axios.get('http://15.207.17.186:5000/api/cart', {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setCart(response.data || { items: [] });
@@ -490,7 +490,7 @@ function Cart({ user, handleLogout }) {
   const handleIncreaseQuantity = async (productId) => {
     try {
       await axios.post(
-        'http://localhost:5000/api/cart/add',
+        'http://15.207.17.186:5000/api/cart/add',
         { productId, quantity: 1 },
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
@@ -510,7 +510,7 @@ function Cart({ user, handleLogout }) {
   const handleDecreaseQuantity = async (productId) => {
     try {
       await axios.post(
-        'http://localhost:5000/api/cart/remove',
+        'http://15.207.17.186:5000/api/cart/remove',
         { productId, quantity: 1 },
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
@@ -530,7 +530,7 @@ function Cart({ user, handleLogout }) {
   const handleClearCart = async () => {
     try {
       await axios.post(
-        'http://localhost:5000/api/cart/clear',
+        'http://15.207.17.186:5000/api/cart/clear',
         {},
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
@@ -568,7 +568,7 @@ function Cart({ user, handleLogout }) {
 
       console.log('Sending checkout request with cartItems:', cart.items, 'and userId:', user.id);
       const response = await axios.post(
-        'http://localhost:5000/api/payment/create-checkout-session',
+        'http://15.207.17.186:5000/api/payment/create-checkout-session',
         {
           cartItems: cart.items,
           userId: user.id,
