@@ -34,7 +34,7 @@ const Register = () => {
       return;
     }
 
-    const res = await fetch('http://localhost:5000/auth/register', {
+    const res = await fetch('http://15.207.17.186:5000/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -55,7 +55,7 @@ const Register = () => {
 
   const handleOTPSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:5000/auth/verify-otp', {
+    const res = await fetch('http://15.207.17.186:5000/auth/verify-otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ registrationId, otp }),
