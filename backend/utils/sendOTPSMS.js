@@ -1,8 +1,6 @@
 const sendOTPSMS = async (phone, otp) => {
   try {
-    // Simulate sending OTP by logging to console
-    console.log(`Simulated OTP for ${phone}: ${otp}`);
-    // In a real app, this would send an SMS via a service like Fast2SMS
+    // Simulate sending OTP (no logging needed since OTP is sent to frontend)
     return true;
   } catch (error) {
     console.error('Simulated OTP error:', error);
