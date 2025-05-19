@@ -199,7 +199,7 @@ if (app._router && app._router.stack) {
 }
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI || 'mongodb://15.207.17.186:27017/zepto_clone')
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/zepto_clone')
   .then(() => {
     console.log('MongoDB connected successfully');
     // Verify the database and collection
