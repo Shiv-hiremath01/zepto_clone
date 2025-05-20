@@ -145,7 +145,6 @@
 //     res.status(500).json({ message: 'Server error', error: error.message });
 //   }
 // };
-
 const Cart = require('../models/Cart');
 const Product = require('../models/Products');
 const User = require('../models/User');
