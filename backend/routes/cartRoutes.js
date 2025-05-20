@@ -32,7 +32,7 @@
 
 const express = require('express');
 const router = express.Router();
-const cartController = require('../contoller/cartController');
+const cartController = require('../controller/cartController');
 const cartMiddleware = require('../middleware/cartMiddleware');
 
 // Apply authMiddleware to all cart routes
