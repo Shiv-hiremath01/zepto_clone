@@ -190,115 +190,117 @@ const AdminDashboard = ({ user, setUser }) => {
         </div>
       )}
 
-      <style>
-  {`
-    .admin-dashboard-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 2rem;
-      background: #ffffff;
-      min-height: 100vh;
-      font-family: 'Inter', sans-serif;
-    }
+     <style>
+{`
+  .admin-dashboard-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #1b1b1b;
+  }
 
-    .dashboard-title {
-      font-size: 26px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
+  .dashboard-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1b1b1b;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
 
-    .section-title {
-      font-size: 20px;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin-top: 3rem;
-      margin-bottom: 1.5rem;
-      text-align: left;
-    }
+  .section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #007e5a;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
 
-    .no-vendors-message,
-    .no-orders-message {
-      text-align: center;
-      font-size: 16px;
-      color: #777;
-      font-weight: 500;
-      margin-top: 2rem;
-    }
+  .no-vendors-message,
+  .no-orders-message {
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+    font-weight: 500;
+    margin-top: 2rem;
+  }
 
-    .vendors-table-container,
-    .orders-table-container {
-      background: #f2f2f2;
-      border-radius: 10px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-      overflow-x: auto;
-      margin-bottom: 2rem;
-    }
+  .vendors-table-container,
+  .orders-table-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    overflow-x: auto;
+    margin-bottom: 2rem;
+    border: 1px solid #e5e7eb;
+  }
 
-    .vendors-table,
-    .orders-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+  .vendors-table,
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
-    .vendors-table th,
-    .orders-table th {
-      padding: 12px 16px;
-      text-align: left;
-      font-size: 13px;
-      background: #e5f5ec;
-      color: #2e7d32;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
+  .vendors-table th,
+  .orders-table th {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 13px;
+    background: #e9f9f2;
+    color: #008060;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d1d5db;
+  }
 
-    .vendors-table td,
-    .orders-table td {
-      padding: 12px 16px;
-      text-align: left;
-      font-size: 14px;
-      color: #333;
-      border-bottom: 1px solid #ddd;
-    }
+  .vendors-table td,
+  .orders-table td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+  }
 
-    .vendors-table tr:hover,
-    .orders-table tr:hover {
-      background: #f9f9f9;
-    }
+  .vendors-table tr:hover,
+  .orders-table tr:hover {
+    background: #f9fdfb;
+  }
 
-    .product-list,
-    .order-items-list {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin: 0;
-    }
+  .product-list,
+  .order-items-list {
+    list-style-type: disc;
+    padding-left: 18px;
+    margin: 0;
+  }
 
-    .product-item,
-    .order-item {
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 4px;
-    }
+  .product-item,
+  .order-item {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 4px;
+  }
 
-    .delete-button {
-      padding: 6px 12px;
-      background-color: #d32f2f;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 600;
-      border: none;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
+  .delete-button {
+    padding: 8px 14px;
+    background-color: #ff4d4f;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-    .delete-button:hover {
-      background-color: #b71c1c;
-      transform: scale(1.04);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-  `}
+  .delete-button:hover {
+    background-color: #d9363e;
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(255, 77, 79, 0.2);
+  }
+`}
 </style>
     </div>
   );
