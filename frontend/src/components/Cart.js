@@ -20,7 +20,7 @@ function Cart({ user, handleLogout }) {
       }
 
       try {
-        const response = await axios.get('http://localhost:5000/api/cart', {
+        const response = await axios.get('http://15.207.17.186:5000/api/cart', {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         console.log('Cart data fetched:', response.data);
@@ -42,7 +42,7 @@ function Cart({ user, handleLogout }) {
 
   const refreshCart = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/cart', {
+      const response = await axios.get('http://15.207.17.186:5000/api/cart', {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setCart(response.data || { items: [] });
