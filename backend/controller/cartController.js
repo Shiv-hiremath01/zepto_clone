@@ -146,9 +146,8 @@
 //   }
 // };
 
-
 const Cart = require('../models/Cart');
-const Product = require('../models/Product');
+const Product = require('../models/Products');
 const User = require('../models/User');
 
 exports.getCart = async (req, res) => {
